@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Quote</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: white;
+    height: 100%;
+  }
+  body {
+    padding: 2px 0 0 0;
+  }
+  p {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #37352f;
+    letter-spacing: 0.01em;
+  }
+  .author {
+    font-style: normal;
+    font-size: 14px;
+    color: #9b9a97;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+<p id="q"></p>
+<script>
+const quotes = [
+  { text: "You have power over your mind — not outside events. Realize this, and you will find strength.", author: "Marcus Aurelius" },
+  { text: "Waste no more time arguing what a good man should be. Be one.", author: "Marcus Aurelius" },
+  { text: "The first and greatest victory is to conquer yourself.", author: "Plato" },
+  { text: "He who has a why to live for can bear almost any how.", author: "Nietzsche" },
+  { text: "Do not seek for things to happen the way you want them to; but wish for the things that happen to be as they are, and you will have a tranquil flow of life.", author: "Epictetus" },
+  { text: "It is not because things are difficult that we do not dare — it is because we do not dare that they are difficult.", author: "Seneca" },
+  { text: "Man is not the creature of circumstances. Circumstances are the creatures of men.", author: "Disraeli" }
+];
+const q = quotes[new Date().getDay()];
+document.getElementById("q").innerHTML = `\u201C${q.text}\u201D &nbsp;<span class="author">\u2014 ${q.author}</span>`;
+</script>
+</body>
+</html>
